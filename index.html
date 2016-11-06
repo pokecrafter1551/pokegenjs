@@ -1,32 +1,88 @@
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>PokeGenJS Revival</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>PokeGenJS Revival</title>
 	<script src="typedarray.js"></script>
 	<script src="Long.js"></script>
 	<script type="text/javascript" src="jquery.min.js"></script> 
 	<link rel="stylesheet" type="text/css" href="jquery.datepick.css"> 
-<link rel="stylesheet"href="hbrew.css">
 	<script type="text/javascript" src="jquery.plugin.js"></script> 
 	<script type="text/javascript" src="jquery.datepick.js"></script>
 	<script type="text/javascript" src="qrcode.min.js"></script>
+    <meta name="keywords" content="homebrew" />
+    <meta name="description" content="ds" />
+    <link href='http://fonts.googleapis.com/css?family=Homenaje' rel='stylesheet' type='text/css'>
+    <link href="hbrew.css" rel="stylesheet" type="text/css" media="all" /><link rel="shortcut icon" href="images/icon.png"/>
+    <script>
+        // pretty masterful javascript code here
+        // i wrote it myself
+        //                                                 - Smealum
+        function toggleDisplay(id)
+        {
+            var el = document.getElementById(id);
+            if(el.style.display == "none") el.style.display = "block";
+            else el.style.display = "none";
+        }
+
+    </script>
 </head>
+
 <body onload="setup()">
 	<script src="pokegenjs.js" charset="UTF-8"></script>
-<font size="50" face="verdana" color="green"><h1><strong><u>PokeGenJS</u></strong></h1></font>
-	<font face="verdana" color="purple"><h3>Copyright 2015 <a href="http://twitter.com/termana">Bradley Jarvis</a></h3></font>
-   <font face="verdana" color="orange"><h4>Revived by <a href="http://github.com/pokecrafter1551/">Ruben Avila</a></h4></font>
-<br><br>
-	<a href="NOTICES">Copyright Notices</a>
-<br><br>
-	<input type="button" value="Pre-made Ditto" onclick="makeDitto()">
+    <div id="toplogo">
+        <img class="logo" src="images/logo.png" alt="PokeGenJS Revival" width="400"/>
+    </div>
+
+    <div class="content">
+        Welcome to the PokeGenJS Revival website ! This page is meant to be a new hub for the best and newest ways to get pokémon on your GenVI games. <br>
+        If you want to see PokeGenJS Revival in action, check out <a href="https://www.youtube.com/watch?v=xryrEpVbCrk">this video</a> !
+    </div>
+
+    <div class="content">
+        <h2>What is PokeGenJS Revival ?</h2>
+        <br>
+        PokeGenJS Revival is what we call Pokémon generation software made for systems such as the 3DS. This includes most, if not all Pokémon, and in practice getting Pokémon on your 3DS means:
+        <br>
+        <br>
+        <table style="width:100%">
+            <tr>
+                <td style="width:50%"><img src="images/OR.png" width="70" align="left" style="margin-right: 8px; border-radius: 5px;">You'll be able to have a competitive team</td>
+                <td style="width:50%"><img src="images/AS.png" width="70" align="left" style="margin-right: 8px; border-radius: 5px;"> Make a complete livingdex</td>
+            </tr>
+            <tr>
+                <td style="width:50%"><img src="images/X.png" width="70" align="left" style="margin-right: 8px; border-radius: 5px;"> Make your own Pokémon trading empire</td>
+                <td style="width:50%"><img src="images/Y.png" width="70" align="left" style="margin-right: 8px; border-radius: 5px;"> and so much more!</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="content">
+        <h2>How do I use PokeGenJS Revival?</h2> 
+        <br>
+        Getting Pokémon on your 3DS has never been easier! All you need is a bit of patience. Select the menu items below you have below to get started (Only choose one item on dropdown menus!) :
+        <br>
+        <div style="margin-left: 20px; margin-top: 10px;">
+
+            <a href="javascript:toggleDisplay('cn_content');"><table> <tr>
+                <td> <img src="images/cn_icon.png" width="60" style="margin-right: 8px; border-radius: 5px;"> </td>
+                <td style="font-size: 1.2em;"> What Pokémon do you want? </td>
+            </tr> </table></a>
+            <div id="cn_content" style="display: none;">
+                <input type="button" value="Pre-made Ditto" onclick="makeDitto()">
 	<br><br>
 <p>
-	Species: <select id="species" onchange="speciesChange()"></select>
+Species: <select id="species" onchange="speciesChange()"></select>
 	<select id="species2" onchange="speciesChange()"></select>
 	<select id="species3" onchange="speciesChange()"></select>
 	<select id="species4" onchange="speciesChange()"></select>
-	<br><br>
-	Nickname:
+            </div>
+            <a href="javascript:toggleDisplay('freaky_content');"><table> <tr>
+                <td> <img src="images/freaky_icon.png" width="60" style="margin-right: 8px; border-radius: 5px;"> </td>
+                <td style="font-size: 1.2em;"> Stats and stuff </td>
+            </tr> </table></a>
+            <div id="freaky_content" style="display: none;">
+Nickname:
 	<input type="checkbox" id="isNicknamed"/>
 	<input type="text" id="nickname" maxlength="12" value="">
 	<br><br>
@@ -55,8 +111,134 @@
 		<option>None (1)</option>
 		<option>None (H)</option>
 	</select>
-	<br><br>
-	Current Moves:
+            </div>
+            <a href="javascript:toggleDisplay('smile_content');"><table> <tr>
+                <td> <img src="images/smile_icon.png" width="60" style="margin-right: 8px; border-radius: 5px;"> </td>
+                <td style="font-size: 1.2em;"> Where the pokemon is from and EVs, IVs, and stats </td>
+            </tr> </table></a>
+            <div id="smile_content" style="display: none;">
+                Language:
+    <select id="lang">
+        <option>Japanese</option>
+        <option>English</option>
+        <option>French</option>
+        <option>Italian</option>
+        <option>German</option>
+        <option>Spanish</option>
+        <option>Korean</option>
+    </select>
+    <br><br>
+    <input type="checkbox" id="isEgg"> isEgg
+    <input type="checkbox" id="infected"> Infected
+    <input type="checkbox" id="infected"> Cured
+    <br><br>
+    Country:
+    <select id="country" onchange="populateSubRegion(null)">
+    </select>
+    <br><br>
+    Sub Region:
+    <select id="subregion">
+    </select>
+    <br><br>
+    3DS Region:
+    <select id="3dsregion">
+        <option>Japan</option>
+        <option>Americas (NA/SA)</option>
+        <option>Europe (EU/AU)</option>
+        <option>China</option>
+        <option>Korea</option>
+        <option>Taiwan</option>
+    </select>
+    <br><br>
+    Origin Game:
+    <select id="origin">
+        <option>OR</option>
+        <option>AS</option>
+        <option>X</option>
+        <option>Y</option>
+    </select>
+    <br><br>
+    Met Location:
+    <select id="metLocation">
+    </select>
+    <select id="metLocation2">
+    </select>
+    <br><br>
+    Ball:
+    <select id="ball">
+    </select>
+    <br><br>
+    Met Level:
+    <input type="text" id="metlvl" maxlength="3" oninput="lvlValidate(this, false)" value="0">
+    <br><br>
+    Met Date:
+    <div id="metDate"></div>
+    <br><br>
+    <input type="checkbox" id="fatefulEncounter"> Fateful Encounter
+    <br><br>
+    <input type="checkbox" id="asEgg"> As Egg
+    <br><br>
+    Egg Met Location:
+    <select id="eggMetLocation">
+    </select>
+    <select id="eggMetLocation2">
+    </select>
+    <br><br>
+    Egg Met Date:
+    <div id="eggMetDate"></div>
+    <br><br>
+    <table>
+        <tr>
+            <td></td>
+            <td>IVs</td>
+            <td>EVs</td>
+            <td>Stats</td>
+        </tr>
+        <tr>
+            <td>HP:</td>
+            <td id="hpIV"><input type="text" id="hpIVf" maxlength="2" oninput="ivChange(this)" value="0"></td>
+            <td id="hpEV"><input type="text" id="hpEVf" maxlength="3" oninput="evChange(this)" value="0"></td>
+            <td id="hpStat">0</td>
+        </tr>
+        <tr>
+            <td>Atk:</td>
+            <td id="atkIV"><input type="text" id="atkIVf" maxlength="2" oninput="ivChange(this)" value="0"></td>
+            <td id="atkEV"><input type="text" id="atkEVf" maxlength="3" oninput="evChange(this)" value="0"></td>
+            <td id="atkStat">0</td>
+        </tr>
+        <tr>
+            <td>Def:</td>
+            <td id="defIV"><input type="text" id="defIVf" maxlength="2" oninput="ivChange(this)" value="0"></td>
+            <td id="defEV"><input type="text" id="defEVf" maxlength="3" oninput="evChange(this)" value="0"></td>
+            <td id="defStat">0</td>
+        </tr>
+        <tr>
+            <td>SpA:</td>
+            <td id="spaIV"><input type="text" id="spaIVf" maxlength="2" oninput="ivChange(this)" value="0"></td>
+            <td id="spaEV"><input type="text" id="spaEVf" maxlength="3" oninput="evChange(this)" value="0"></td>
+            <td id="spaStat">0</td>
+        </tr>
+        <tr>
+            <td>SpD:</td>
+            <td id="spdIV"><input type="text" id="spdIVf" maxlength="2" oninput="ivChange(this)" value="0"></td>
+            <td id="spdEV"><input type="text" id="spdEVf" maxlength="3" oninput="evChange(this)" value="0"></td>
+            <td id="spdStat">0</td>
+        </tr>
+        <tr>
+            <td>Spe:</td>
+            <td id="speIV"><input type="text" id="speIVf" maxlength="2" oninput="ivChange(this)" value="0"></td>
+            <td id="speEV"><input type="text" id="speEVf" maxlength="3" oninput="evChange(this)" value="0"></td>
+            <td id="speStat">0</td>
+        </tr>
+    </table>
+    <br><br>
+            </div>
+            <a href="javascript:toggleDisplay('oot_content');"><table> <tr>
+                <td> <img src="images/oot_icon.png" width="60" style="margin-right: 8px; border-radius: 5px;"> </td>
+                <td style="font-size: 1.2em;"> Learned move sets and related stuff </td>
+            </tr> </table></a>
+            <div id="oot_content" style="display: none;">
+Current Moves:
 	<br>
 	<select id="move1">
 	</select>
@@ -95,202 +277,98 @@
 	</select>
 	<br><br>
 	Relearn Moves:
-	<br>
-	<select id="rmove1">
-	</select>
-	<select id="rmove12">
-	</select>
-	<select id="rmove13">
-	</select>
-	<select id="rmove14">
-	</select>
-	<br>
-	<select id="rmove2">
-	</select>
-	<select id="rmove22">
-	</select>
-	<select id="rmove23">
-	</select>
-	<select id="rmove24">
-	</select>
-	<br>
-	<select id="rmove3">
-	</select>
-	<select id="rmove32">
-	</select>
-	<select id="rmove33">
-	</select>
-	<select id="rmove34">
-	</select>
-	<br>
-	<select id="rmove4">
-	</select>
-	<select id="rmove42">
-	</select>
-	<select id="rmove43">
-	</select>
-	<select id="rmove44">
-	</select>
-	<br><br>
-	Language:
-	<select id="lang">
-		<option>English</option>
-		<option>Japanese</option>
-		<option>French</option>
-		<option>Italian</option>
-		<option>German</option>
-		<option>Spanish</option>
-		<option>Korean</option>
-	</select>
-	<br><br>
-	<input type="checkbox" id="isEgg"> isEgg
-	<input type="checkbox" id="infected"> Infected
-	<input type="checkbox" id="infected"> Cured
-	<br><br>
-	Country:
-	<select id="country" onchange="populateSubRegion(null)">
-	</select>
-	<br><br>
-	Sub Region:
-	<select id="subregion">
-	</select>
-	<br><br>
-	3DS Region:
-	<select id="3dsregion">
-		<option>Americas (NA/SA)</option>
-		<option>Japan</option>
-		<option>Europe (EU/AU)</option>
-		<option>China</option>
-		<option>Korea</option>
-		<option>Taiwan</option>
-	</select>
-	<br><br>
-	Origin Game:
-	<select id="origin">
-		<option>OR</option>
-		<option>AS</option>
-		<option>X</option>
-		<option>Y</option>
-	</select>
-	<br><br>
-	Met Location:
-	<select id="metLocation">
-	</select>
-	<select id="metLocation2">
-	</select>
-	<br><br>
-	Ball:
-	<select id="ball">
-	</select>
-	<br><br>
-	Met Level:
-	<input type="text" id="metlvl" maxlength="3" oninput="lvlValidate(this, false)" value="0">
-	<br><br>
-	Met Date:
-	<div id="metDate"></div>
-	<br><br>
-	<input type="checkbox" id="fatefulEncounter"> Fateful Encounter
-	<br><br>
-	<input type="checkbox" id="asEgg"> As Egg
-	<br><br>
-	Egg Met Location:
-	<select id="eggMetLocation">
-	</select>
-	<select id="eggMetLocation2">
-	</select>
-	<br><br>
-	Egg Met Date:
-	<div id="eggMetDate"></div>
-	<br><br>
-	<table>
-		<tr>
-			<td></td>
-			<td>IVs</td>
-			<td>EVs</td>
-			<td>Stats</td>
-		</tr>
-		<tr>
-			<td>HP:</td>
-			<td id="hpIV"><input type="text" id="hpIVf" maxlength="2" oninput="ivChange(this)" value="0"></td>
-			<td id="hpEV"><input type="text" id="hpEVf" maxlength="3" oninput="evChange(this)" value="0"></td>
-			<td id="hpStat">0</td>
-		</tr>
-		<tr>
-			<td>Atk:</td>
-			<td id="atkIV"><input type="text" id="atkIVf" maxlength="2" oninput="ivChange(this)" value="0"></td>
-			<td id="atkEV"><input type="text" id="atkEVf" maxlength="3" oninput="evChange(this)" value="0"></td>
-			<td id="atkStat">0</td>
-		</tr>
-		<tr>
-			<td>Def:</td>
-			<td id="defIV"><input type="text" id="defIVf" maxlength="2" oninput="ivChange(this)" value="0"></td>
-			<td id="defEV"><input type="text" id="defEVf" maxlength="3" oninput="evChange(this)" value="0"></td>
-			<td id="defStat">0</td>
-		</tr>
-		<tr>
-			<td>SpA:</td>
-			<td id="spaIV"><input type="text" id="spaIVf" maxlength="2" oninput="ivChange(this)" value="0"></td>
-			<td id="spaEV"><input type="text" id="spaEVf" maxlength="3" oninput="evChange(this)" value="0"></td>
-			<td id="spaStat">0</td>
-		</tr>
-		<tr>
-			<td>SpD:</td>
-			<td id="spdIV"><input type="text" id="spdIVf" maxlength="2" oninput="ivChange(this)" value="0"></td>
-			<td id="spdEV"><input type="text" id="spdEVf" maxlength="3" oninput="evChange(this)" value="0"></td>
-			<td id="spdStat">0</td>
-		</tr>
-		<tr>
-			<td>Spe:</td>
-			<td id="speIV"><input type="text" id="speIVf" maxlength="2" oninput="ivChange(this)" value="0"></td>
-			<td id="speEV"><input type="text" id="speEVf" maxlength="3" oninput="evChange(this)" value="0"></td>
-			<td id="speStat">0</td>
-		</tr>
-	</table>
-	<br><br>
-	TID:
-	<input type="text" id="TID" maxlength="5" oninput="idValidate(this)" value="12345">
-	SID:
-	<input type="text" id="SID" maxlength="5" oninput="idValidate(this)" value="12345">
-	<br>
-	OT:
-	<input type="text" id="OT" maxlength="12" oninput="otValidate(this)" value="PokeGenJS">
-	<input type="text" id="otGender" disabled="true" value="Male">
-	<input type="button" id="otGenderBtn" value="Change Gender" onclick="changeGenders('otGender')">
-	<br><br>
-	Current Handler:
-	<br>
-	<select id="type">
-		<option>OT</option>
-		<option>NotOT</option>
-	</select>
-	<br><br>
-	Latest Handler:
-	<input type="text" id="nOT" maxlength="12" oninput="otValidate(this)" value="">
-	<input type="text" id="notGender" disabled="true" value="Male">
-	<input type="button" id="notGenderBtn" value="Change Gender" onclick="changeGenders('notGender')">
-	<br><br>
-	Residence:
-	<select id="rcountry" onchange="populateRSubRegion(null)">
-	</select>
-	<br>
-	Sub Region:
-	<select id="rsubregion">
-	</select>
-	<br><br>
-	<input type="checkbox" id="eventMem"> Traded Event Memory
-	<input type="checkbox" id="classicRibbon"> Classic Ribbon
-	<input type="checkbox" id="wishingRibbon"> Wishing Ribbon
-	<input type="checkbox" id="eventRibbon"> Event Ribbon
-	<br><br>
-	Encryption Constant:
-	<input type="text" id="EC" maxlength="8" disabled="true" value="00000000">
-	<input type="button" id="ECroll" value="Reroll" onclick="rollEC()">
-	<br><br>
-	<input type="button" value="Inject to Game" onclick="buildInject()">
-	<input type="button" value="Generate QR Code" onclick="buildQRCode()">
-	<br>
-	<br>
-	<div id="qrcode"></div>
-</p>
+    <br>
+    <select id="rmove1">
+    </select>
+    <select id="rmove12">
+    </select>
+    <select id="rmove13">
+    </select>
+    <select id="rmove14">
+    </select>
+    <br>
+    <select id="rmove2">
+    </select>
+    <select id="rmove22">
+    </select>
+    <select id="rmove23">
+    </select>
+    <select id="rmove24">
+    </select>
+    <br>
+    <select id="rmove3">
+    </select>
+    <select id="rmove32">
+    </select>
+    <select id="rmove33">
+    </select>
+    <select id="rmove34">
+    </select>
+    <br>
+    <select id="rmove4">
+    </select>
+    <select id="rmove42">
+    </select>
+    <select id="rmove43">
+    </select>
+    <select id="rmove44">
+    </select>
+            </div>
+
+            <a href="javascript:toggleDisplay('sticker_content');"><table> <tr>
+                <td> <img src="images/sticker_icon.png" width="60" style="margin-right: 8px; border-radius: 5px;"> </td>
+                <td style="font-size: 1.2em;"> Trainer INFO and Ribbons </td>
+            </tr> </table></a>
+            <div id="sticker_content" style="display: none;">
+                TID:
+    <input type="text" id="TID" maxlength="5" oninput="idValidate(this)" value="12345">
+    SID:
+    <input type="text" id="SID" maxlength="5" oninput="idValidate(this)" value="12345">
+    <br>
+    OT:
+    <input type="text" id="OT" maxlength="12" oninput="otValidate(this)" value="PokeGenJS">
+    <input type="text" id="otGender" disabled="true" value="Male">
+    <input type="button" id="otGenderBtn" value="Change Gender" onclick="changeGenders('otGender')">
+    <br><br>
+    Current Handler:
+    <br>
+    <select id="type">
+        <option>OT</option>
+        <option>NotOT</option>
+    </select>
+    <br><br>
+    Latest Handler:
+    <input type="text" id="nOT" maxlength="12" oninput="otValidate(this)" value="">
+    <input type="text" id="notGender" disabled="true" value="Male">
+    <input type="button" id="notGenderBtn" value="Change Gender" onclick="changeGenders('notGender')">
+                Residence:
+    <select id="rcountry" onchange="populateRSubRegion(null)">
+    </select>
+    <br>
+    Sub Region:
+    <select id="rsubregion">
+    </select>
+    <br><br>
+    <input type="checkbox" id="eventMem"> Traded Event Memory
+    <input type="checkbox" id="classicRibbon"> Classic Ribbon
+    <input type="checkbox" id="wishingRibbon"> Wishing Ribbon
+    <input type="checkbox" id="eventRibbon"> Event Ribbon
+            </div>
+
+            <a href="javascript:toggleDisplay('psmd_content');"><table> <tr>
+                <td> <img src="images/psmd_icon.png" width="60" style="margin-right: 8px; border-radius: 5px;"> </td>
+                <td style="font-size: 1.2em;"> Encryption Constant </td>
+            </tr> </table></a>
+            <div id="psmd_content" style="display: none;">
+                Encryption Constant:
+    <input type="text" id="EC" maxlength="8" disabled="true" value="00000000">
+    <input type="button" id="ECroll" value="Reroll" onclick="rollEC()">
+            </div>
+            <br><br>
+            <input type="button" value="Inject" onclick="buildInject()">
+    <input type="button" value="Generate QR Code" onclick="buildQRCode()">
+    <br>
+    <br>
+    <div id="qrcode"></div>
 </body>
 </html>
