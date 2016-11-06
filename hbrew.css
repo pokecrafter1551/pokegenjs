@@ -1,0 +1,14 @@
+body {
+    background-color:powderblue;
+    font-family:verdana;
+    border:1px solid powderblue;
+    margin:2000px;
+}
+
+p {
+    border:1px solid powderblue;
+    margin:50px;
+    color:red;
+    font-family:courier;
+    font-size:200%;
+}

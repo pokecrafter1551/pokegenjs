@@ -1,28 +1,25 @@
 <html>
 <head>
-	<title>PokeGenJS</title>
+	<title>PokeGenJS Revival</title>
 	<script src="typedarray.js"></script>
 	<script src="Long.js"></script>
 	<script type="text/javascript" src="jquery.min.js"></script> 
 	<link rel="stylesheet" type="text/css" href="jquery.datepick.css"> 
+<link rel="stylesheet"href="hbrew.css">
 	<script type="text/javascript" src="jquery.plugin.js"></script> 
 	<script type="text/javascript" src="jquery.datepick.js"></script>
 	<script type="text/javascript" src="qrcode.min.js"></script>
 </head>
 <body onload="setup()">
 	<script src="pokegenjs.js" charset="UTF-8"></script>
-	<font size="5" face="verdana" color="green"><strong>PokeGenJS</strong></font>
-	<h3>Copyright 2015 <a href="http://twitter.com/termana">Bradley Jarvis</a></h3>
-   <h4>Revived by <a href="https://github.com/pokecrafter1551/pokegenjs-Revival/">Ruben Avila</a></h4>
-	<a href="NOTICES">Copyright Notices</a><br><br>
-	<input type="button" value="Ditto Prefill" onclick="makeDitto()">
+<font size="50" face="verdana" color="green"><h1><strong><u>PokeGenJS</u></strong></h1></font>
+	<font face="verdana" color="purple"><h3>Copyright 2015 <a href="http://twitter.com/termana">Bradley Jarvis</a></h3></font>
+   <font face="verdana" color="orange"><h4>Revived by <a href="http://github.com/pokecrafter1551/">Ruben Avila</a></h4></font>
+	<a href="NOTICES">Copyright Notices</a>
+<br><br>
+	<input type="button" value="Pre-made Ditto" onclick="makeDitto()">
 	<br><br>
-	<input type="button" id="shiny" value="Shiny" onclick="setShinyPID()">
-	PID: <input type="text" id="pid" maxlength="8" oninput="pidValidate()" disabled="true" value="00000000">
-	<input type="text" id="gender" disabled="true" value="Male">
-	<input type="button" id="genderbtn" value="Change Gender" onclick="changeGenders('gender')">
-	<input type="button" id="pidroll" value="Reroll" onclick="rollPID()">
-	<br><br>
+<p>
 	Species: <select id="species" onchange="speciesChange()"></select>
 	<select id="species2" onchange="speciesChange()"></select>
 	<select id="species3" onchange="speciesChange()"></select>
@@ -32,8 +29,14 @@
 	<input type="checkbox" id="isNicknamed"/>
 	<input type="text" id="nickname" maxlength="12" value="">
 	<br><br>
-	EXP: <input type="text" id="exp" maxlength="7" value="0" disabled="true">
+	<input type="button" id="shiny" value="Shiny" onclick="setShinyPID()">
+	PID: <input type="text" id="pid" maxlength="8" oninput="pidValidate()" disabled="true" value="00000000">
+	<input type="text" id="gender" disabled="true" value="Male">
+	<input type="button" id="genderbtn" value="Change Gender" onclick="changeGenders('gender')">
+	<input type="button" id="pidroll" value="Reroll" onclick="rollPID()">
+	<br><br>
 	Level: <input type="text" id="lvl" maxlength="3" oninput="lvlValidate(this, true)" onchange="lvlValidate(this, true)" value="0">
+	EXP: <input type="text" id="exp" maxlength="7" value="0" disabled="true">
 	<br><br>
 	Nature: <select id="nature"></select>
 	<br><br>
@@ -52,10 +55,86 @@
 		<option>None (H)</option>
 	</select>
 	<br><br>
+	Current Moves:
+	<br>
+	<select id="move1">
+	</select>
+	<select id="move12">
+	</select>
+	<select id="move13">
+	</select>
+	<select id="move14">
+	</select>
+	<br>
+	<select id="move2">
+	</select>
+	<select id="move22">
+	</select>
+	<select id="move23">
+	</select>
+	<select id="move24">
+	</select>
+	<br>
+	<select id="move3">
+	</select>
+	<select id="move32">
+	</select>
+	<select id="move33">
+	</select>
+	<select id="move34">
+	</select>
+	<br>
+	<select id="move4">
+	</select>
+	<select id="move42">
+	</select>
+	<select id="move43">
+	</select>
+	<select id="move44">
+	</select>
+	<br><br>
+	Relearn Moves:
+	<br>
+	<select id="rmove1">
+	</select>
+	<select id="rmove12">
+	</select>
+	<select id="rmove13">
+	</select>
+	<select id="rmove14">
+	</select>
+	<br>
+	<select id="rmove2">
+	</select>
+	<select id="rmove22">
+	</select>
+	<select id="rmove23">
+	</select>
+	<select id="rmove24">
+	</select>
+	<br>
+	<select id="rmove3">
+	</select>
+	<select id="rmove32">
+	</select>
+	<select id="rmove33">
+	</select>
+	<select id="rmove34">
+	</select>
+	<br>
+	<select id="rmove4">
+	</select>
+	<select id="rmove42">
+	</select>
+	<select id="rmove43">
+	</select>
+	<select id="rmove44">
+	</select>
+	<br><br>
 	Language:
 	<select id="lang">
-		<option>Japanese</option>
 		<option>English</option>
+		<option>Japanese</option>
 		<option>French</option>
 		<option>Italian</option>
 		<option>German</option>
@@ -77,8 +156,8 @@
 	<br><br>
 	3DS Region:
 	<select id="3dsregion">
-		<option>Japan</option>
 		<option>Americas (NA/SA)</option>
+		<option>Japan</option>
 		<option>Europe (EU/AU)</option>
 		<option>China</option>
 		<option>Korea</option>
@@ -167,82 +246,6 @@
 		</tr>
 	</table>
 	<br><br>
-	Current Moves:
-	<br>
-	<select id="move1">
-	</select>
-	<select id="move12">
-	</select>
-	<select id="move13">
-	</select>
-	<select id="move14">
-	</select>
-	<br>
-	<select id="move2">
-	</select>
-	<select id="move22">
-	</select>
-	<select id="move23">
-	</select>
-	<select id="move24">
-	</select>
-	<br>
-	<select id="move3">
-	</select>
-	<select id="move32">
-	</select>
-	<select id="move33">
-	</select>
-	<select id="move34">
-	</select>
-	<br>
-	<select id="move4">
-	</select>
-	<select id="move42">
-	</select>
-	<select id="move43">
-	</select>
-	<select id="move44">
-	</select>
-	<br><br>
-	Relearn Moves:
-	<br>
-	<select id="rmove1">
-	</select>
-	<select id="rmove12">
-	</select>
-	<select id="rmove13">
-	</select>
-	<select id="rmove14">
-	</select>
-	<br>
-	<select id="rmove2">
-	</select>
-	<select id="rmove22">
-	</select>
-	<select id="rmove23">
-	</select>
-	<select id="rmove24">
-	</select>
-	<br>
-	<select id="rmove3">
-	</select>
-	<select id="rmove32">
-	</select>
-	<select id="rmove33">
-	</select>
-	<select id="rmove34">
-	</select>
-	<br>
-	<select id="rmove4">
-	</select>
-	<select id="rmove42">
-	</select>
-	<select id="rmove43">
-	</select>
-	<select id="rmove44">
-	</select>
-	<br><br>
 	TID:
 	<input type="text" id="TID" maxlength="5" oninput="idValidate(this)" value="12345">
 	SID:
@@ -282,10 +285,11 @@
 	<input type="text" id="EC" maxlength="8" disabled="true" value="00000000">
 	<input type="button" id="ECroll" value="Reroll" onclick="rollEC()">
 	<br><br>
-	<input type="button" value="Inject" onclick="buildInject()">
+	<input type="button" value="Inject to Game" onclick="buildInject()">
 	<input type="button" value="Generate QR Code" onclick="buildQRCode()">
 	<br>
 	<br>
 	<div id="qrcode"></div>
+</p>
 </body>
 </html>
