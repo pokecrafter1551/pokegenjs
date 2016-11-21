@@ -77,11 +77,11 @@ Species: <select id="species" onchange="speciesChange()"></select>
 	<select id="species3" onchange="speciesChange()"></select>
 	<select id="species4" onchange="speciesChange()"></select>
             </div>
-            <a href="javascript:toggleDisplay('freaky_content');"><table> <tr>
-                <td> <img src="images/freaky_icon.png" width="60" style="margin-right: 8px; border-radius: 5px;"> </td>
+            <a href="javascript:toggleDisplay('stats_content');"><table> <tr>
+                <td> <img src="images/stats_icon.png" width="60" style="margin-right: 8px; border-radius: 5px;"> </td>
                 <td style="font-size: 1.2em;"> Stats and stuff </td>
             </tr> </table></a>
-            <div id="freaky_content" style="display: none;">
+            <div id="stats_content" style="display: none;">
 Nickname:
 	<input type="checkbox" id="isNicknamed"/>
 	<input type="text" id="nickname" maxlength="12" value="">
@@ -112,11 +112,11 @@ Nickname:
 		<option>None (H)</option>
 	</select>
             </div>
-            <a href="javascript:toggleDisplay('smile_content');"><table> <tr>
-                <td> <img src="images/smile_icon.png" width="60" style="margin-right: 8px; border-radius: 5px;"> </td>
+            <a href="javascript:toggleDisplay('where_content');"><table> <tr>
+                <td> <img src="images/where_icon.png" width="60" style="margin-right: 8px; border-radius: 5px;"> </td>
                 <td style="font-size: 1.2em;"> Where the pokemon is from and EVs, IVs, and stats </td>
             </tr> </table></a>
-            <div id="smile_content" style="display: none;">
+            <div id="where_content" style="display: none;">
                 Language:
     <select id="lang">
         <option>Japanese</option>
@@ -233,11 +233,11 @@ Nickname:
     </table>
     <br><br>
             </div>
-            <a href="javascript:toggleDisplay('oot_content');"><table> <tr>
-                <td> <img src="images/oot_icon.png" width="60" style="margin-right: 8px; border-radius: 5px;"> </td>
+            <a href="javascript:toggleDisplay('move_content');"><table> <tr>
+                <td> <img src="images/move_icon.png" width="60" style="margin-right: 8px; border-radius: 5px;"> </td>
                 <td style="font-size: 1.2em;"> Learned move sets and related stuff </td>
             </tr> </table></a>
-            <div id="oot_content" style="display: none;">
+            <div id="move_content" style="display: none;">
 Current Moves:
 	<br>
 	<select id="move1">
@@ -315,11 +315,11 @@ Current Moves:
     </select>
             </div>
 
-            <a href="javascript:toggleDisplay('sticker_content');"><table> <tr>
-                <td> <img src="images/sticker_icon.png" width="60" style="margin-right: 8px; border-radius: 5px;"> </td>
+            <a href="javascript:toggleDisplay('trainer_content');"><table> <tr>
+                <td> <img src="images/trainer_icon.png" width="60" style="margin-right: 8px; border-radius: 5px;"> </td>
                 <td style="font-size: 1.2em;"> Trainer INFO and Ribbons </td>
             </tr> </table></a>
-            <div id="sticker_content" style="display: none;">
+            <div id="trainer_content" style="display: none;">
                 TID:
     <input type="text" id="TID" maxlength="5" oninput="idValidate(this)" value="12345">
     SID:
@@ -355,11 +355,11 @@ Current Moves:
     <input type="checkbox" id="eventRibbon"> Event Ribbon
             </div>
 
-            <a href="javascript:toggleDisplay('psmd_content');"><table> <tr>
-                <td> <img src="images/psmd_icon.png" width="60" style="margin-right: 8px; border-radius: 5px;"> </td>
+            <a href="javascript:toggleDisplay('lock_content');"><table> <tr>
+                <td> <img src="images/lock_icon.png" width="60" style="margin-right: 8px; border-radius: 5px;"> </td>
                 <td style="font-size: 1.2em;"> Encryption Constant </td>
             </tr> </table></a>
-            <div id="psmd_content" style="display: none;">
+            <div id="lock_content" style="display: none;">
                 Encryption Constant:
     <input type="text" id="EC" maxlength="8" disabled="true" value="00000000">
     <input type="button" id="ECroll" value="Reroll" onclick="rollEC()">
